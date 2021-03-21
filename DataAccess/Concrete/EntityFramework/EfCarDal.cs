@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class EfCarDal : ICarDal
+    public class EfCarDal : ICarDal
     {
         public void Add(Car entity)
         {
@@ -48,7 +48,11 @@ namespace DataAccess.Concrete.EntityFramework
             using (RentACarContext context= new RentACarContext())
             {
                 return filter == null ? context.Set<Car>().ToList() : context.Set<Car>().Where(filter).ToList();
+
+
             }
+
+           
         }
 
 

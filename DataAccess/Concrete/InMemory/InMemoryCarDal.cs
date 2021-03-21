@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +17,8 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryCarDal() //constructor
         {
              _cars =new List<Car> { 
-                 new Car{Id=1,BrandId=1,ColorId=2,ModelYear="2020",DailyPrice=150000,Description="Sedan 4 kapı"},
-                 new Car{Id=2,BrandId=2,ColorId=1,ModelYear="2019",DailyPrice=150000,Description="Hatchback 2 kapı"}
+                 new Car{Id=1,BrandId=1,ColorId=2,ModelYear=2020,DailyPrice=150000,Description="Sedan 4 kapı"},
+                 new Car{Id=2,BrandId=2,ColorId=1,ModelYear=2019,DailyPrice=150000,Description="Hatchback 2 kapı"}
               
              };
         }
@@ -38,6 +39,11 @@ namespace DataAccess.Concrete.InMemory
             {
                 Console.WriteLine("Id = "+car.Id +" MarkaId = "+ car.BrandId +" Açıklama = "+ car.Description +" Fiyat = "+ car.DailyPrice +" TL");
             }
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public void GetById(int brand)
