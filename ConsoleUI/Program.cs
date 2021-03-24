@@ -19,11 +19,28 @@ namespace ConsoleUI
             //    Console.WriteLine(car.Id +" "+ car.ModelYear+" "+ car.Description );
             //}
 
-            foreach (var carDetail in carManager.GetCarDetails())
+            var result = carManager.GetCarDetails();
+            foreach (var carDetail in result.Data)
             {
                 Console.WriteLine(carDetail.Id+" "+carDetail.BrandName+" "+carDetail.Description+" "+carDetail.ColorName+" "+carDetail.DailyPrice);
+                
             }
 
+            Console.WriteLine(result.Message);
+
+
+            //ColorManager colorManager = new ColorManager(new EfColorDal());
+
+            //colorManager.Add(new Color {ColorName="Sarı"});
+
+
+            //var result2 = colorManager.GetColors();
+            //foreach (var color in result2.Data)
+            //{
+            //    Console.WriteLine(color.ColorId +" "+ color.ColorName);
+            //}
+
+            //Console.WriteLine(result2.Message);
         }
     }
 }
