@@ -18,9 +18,9 @@ namespace Business.Concrete
 
         ICarDal _carDal;
 
-        public CarManager(ICarDal iCarDal)
+        public CarManager(ICarDal CarDal)
         {
-            _carDal = iCarDal;
+            _carDal = CarDal;
         }
 
         public IResult Add(Car car)
