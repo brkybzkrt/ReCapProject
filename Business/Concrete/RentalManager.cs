@@ -25,7 +25,8 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
 
-            if (rental.ReturnDate == null)
+            DateTime customDate = new DateTime (2000,01,01); 
+            if (_rentalDal.GetAll(r=>r.CarId==rental.CarId).Count>1 && rental.ReturnDate==customDate)
             {
                 return new ErrorResult(Messages.RentalNotAdded);
             }

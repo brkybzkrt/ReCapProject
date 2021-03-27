@@ -49,8 +49,15 @@ namespace WebAPI
             services.AddSingleton<IUserDal, EfUserDal>();
             //for CustomerController
 
+            services.AddSingleton<ICustomerService, CustomerManager>();
+
+            services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
             //for RentalsController
+
+            services.AddSingleton<IRentalService, RentalManager>();
+
+            services.AddSingleton<IRentalDal, EfRentalDal>();
 
 
         }

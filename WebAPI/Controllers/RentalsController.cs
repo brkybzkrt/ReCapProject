@@ -11,41 +11,37 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsController : ControllerBase
+    public class RentalsController : ControllerBase
     {
-        ICarService _carService;
+        IRentalService _rentalService;
 
-        public CarsController(ICarService carService)
+        public RentalsController(IRentalService rentalService)
         {
-            _carService = carService;
+            _rentalService = rentalService;
         }
 
+        [HttpGet("getAll")]
 
-        [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _carService.GetAll();
+            var result = _rentalService.GetAll(); 
             if (result.Success)
             {
                 return Ok(result);
             }
-
             return BadRequest(result);
 
         }
 
-        [HttpPost("addCar")]
-
-        public IActionResult AddCar(Car car) 
+        [HttpPost("addRental")]
+        public IActionResult AddRental(Rental rental)
         {
-            var result = _carService.Add(car);
+            var result = _rentalService.Add(rental);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-        
         }
-
     }
 }

@@ -23,11 +23,12 @@ namespace DataAccess.Concrete.EntityFramework
                             on r.CustomerId equals cu.CustomerId
                             join b in context.Brands
                             on c.BrandId equals b.BrandId
-                            select new RentalDetailDto {Id=r.Id,CompanyName=cu.CustomerName,BrandName=b.BrandName,CarName=c.Description,RentDate=r.RentDate,ReturnDate=r.ReturnDate };
+                            select new RentalDetailDto {Id=r.RentalId,CompanyName=cu.CompanyName,BrandName=b.BrandName,CarName=c.Description,RentDate=r.RentDate,ReturnDate=r.ReturnDate };
 
                 return sonuc.ToList();
             }
         }
+        
 
     }
 }

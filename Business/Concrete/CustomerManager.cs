@@ -23,11 +23,11 @@ namespace Business.Concrete
         
         public IResult Add(Customer customer)
         {
-            if (customer.CustomerName.Length<5)
+            if (customer.CompanyName.Length<5)
             {
                 return new ErrorResult(Messages.CustomerNotAdded);
             }
-
+            _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);
         }
 
