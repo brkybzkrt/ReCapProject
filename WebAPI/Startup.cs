@@ -37,27 +37,27 @@ namespace WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
 
-            //for CarsController
-            services.AddSingleton<ICarService,CarManager>();
+            ////for CarsController
+            //services.AddSingleton<ICarService,CarManager>();
 
-            services.AddSingleton<ICarDal,EfCarDal>();
+            //services.AddSingleton<ICarDal,EfCarDal>();
 
 
-            //for UsersController
-            services.AddSingleton<IUserService, UserManager>();
+            ////for UsersController
+            //services.AddSingleton<IUserService, UserManager>();
 
-            services.AddSingleton<IUserDal, EfUserDal>();
-            //for CustomerController
+            //services.AddSingleton<IUserDal, EfUserDal>();
+            ////for CustomerController
 
-            services.AddSingleton<ICustomerService, CustomerManager>();
+            //services.AddSingleton<ICustomerService, CustomerManager>();
 
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
+            //services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
-            //for RentalsController
+            ////for RentalsController
 
-            services.AddSingleton<IRentalService, RentalManager>();
+            //services.AddSingleton<IRentalService, RentalManager>();
 
-            services.AddSingleton<IRentalDal, EfRentalDal>();
+            //services.AddSingleton<IRentalDal, EfRentalDal>();
 
 
         }
